@@ -4,7 +4,8 @@ This repository publishes an English-source-only summary of publicly accessible 
 
 Contents:
 
-- `amway-atmosphere-sky-third-party-report.md` — full report
+- `amway-atmosphere-sky-third-party-report.md` — full report in Markdown
+- `amway-atmosphere-sky-third-party-report.html` — browser-friendly HTML version
 
 Notes:
 
