@@ -1,19 +1,19 @@
 # Amway Atmosphere Sky Third-Party Report
 
-This repository publishes an English-source-only summary of publicly accessible third-party scientific and certification evidence for the Amway Atmosphere Sky air purifier.
+這個 repo 收錄的是 Amway Atmosphere Sky 空氣清淨機的第三方科學測試整理頁，原始採證範圍只使用英文公開來源，網頁內容則已整理為中文版，方便閱讀與分享。
 
-Contents:
+內容包含：
 
-- `amway-atmosphere-sky-third-party-report.md` — full report in Markdown
-- `amway-atmosphere-sky-third-party-report.html` — browser-friendly HTML version
-- `index.html` — GitHub Pages entry point that redirects to the full HTML report
+- `amway-atmosphere-sky-third-party-report.md`：原始 Markdown 報告
+- `amway-atmosphere-sky-third-party-report.html`：中文版完整網頁報告
+- `index.html`：GitHub Pages 首頁入口
 
-Notes:
+目前重點：
 
-- The report prioritizes independent English-language sources.
-- Publicly accessible evidence is strongest for AHAM Verifide CADR data.
-- Filtration-efficiency and noise claims are clearly labeled when a public third-party original report could not be confirmed.
+- 可公開核對的第三方證據，以 AHAM Verifide 的 CADR 資料最完整
+- 過濾效率的英文宣稱常見，但原始第三方公開實驗室報告尚未確認
+- 噪音部分未找到具完整方法說明的英文第三方公開實測報告
 
-License:
+授權：
 
-This repository content is released under CC BY-SA 4.0. See `LICENSE`.
+本 repo 內容採 CC BY-SA 4.0，詳見 `LICENSE`。

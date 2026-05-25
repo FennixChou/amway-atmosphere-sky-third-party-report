@@ -1,46 +1,685 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Amway Atmosphere Sky Third-Party Scientific Test Report Summary</title>
+  <title>Amway Atmosphere Sky 空氣清淨機｜第三方科學測試重點報告</title>
+  <meta name="description" content="整理 Amway Atmosphere Sky 空氣清淨機之英文第三方公開資料，涵蓋 CADR、過濾效率、臭氧認證框架與噪音測試可得性。">
   <style>
     :root {
-      --bg: #f6f7fb;
-      --card: #ffffff;
-      --text: #1f2937;
-      --muted: #6b7280;
-      --line: #dbe2ea;
-      --accent: #1f4b99;
-      --accent-soft: #eaf1ff;
+      --bg: #f3f6fb;
+      --bg-strong: #0f172a;
+      --surface: rgba(255,255,255,0.78);
+      --surface-solid: #ffffff;
+      --surface-soft: #eef4ff;
+      --text: #162033;
+      --muted: #5f6b7d;
+      --line: rgba(24, 43, 77, 0.12);
+      --primary: #1d4ed8;
+      --primary-deep: #173ea6;
+      --teal: #0f766e;
+      --amber: #b45309;
+      --danger: #b91c1c;
+      --shadow: 0 24px 60px rgba(15, 23, 42, 0.12);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 16px;
+      --max: 1120px;
     }
+
     * { box-sizing: border-box; }
-    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
-    .wrap { max-width: 980px; margin: 0 auto; padding: 40px 20px 64px; }
-    .card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 32px; box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06); }
-    h1 { font-size: 2rem; margin: 0 0 8px; line-height: 1.25; }
-    h2 { margin-top: 32px; padding-top: 10px; border-top: 1px solid var(--line); font-size: 1.4rem; }
-    h3 { margin-top: 24px; font-size: 1.1rem; color: var(--accent); }
-    p { margin: 10px 0; }
-    .lead { color: var(--muted); margin-bottom: 24px; }
-    .numbered { font-weight: 600; margin-top: 14px; }
-    ul { margin: 8px 0 16px 20px; padding: 0; }
-    li { margin: 6px 0; }
-    a { color: var(--accent); text-decoration: none; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(96, 165, 250, 0.25), transparent 28%),
+        radial-gradient(circle at top right, rgba(45, 212, 191, 0.16), transparent 22%),
+        linear-gradient(180deg, #f8fbff 0%, var(--bg) 38%, #eef3fb 100%);
+      line-height: 1.8;
+    }
+
+    a { color: var(--primary); text-decoration: none; }
     a:hover { text-decoration: underline; }
-    .table-wrap { overflow-x: auto; margin: 16px 0 20px; }
-    table { width: 100%; border-collapse: collapse; font-size: 0.95rem; background: #fff; }
-    th, td { border: 1px solid var(--line); padding: 10px 12px; text-align: left; vertical-align: top; }
-    th { background: var(--accent-soft); font-weight: 700; }
-    .meta { display: inline-block; background: var(--accent-soft); color: var(--accent); border-radius: 999px; padding: 6px 12px; font-size: 0.92rem; margin-bottom: 14px; }
+
+    .shell {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 48px 0 28px;
+    }
+
+    .hero-card {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.45);
+      border-radius: 32px;
+      padding: 40px;
+      background:
+        linear-gradient(135deg, rgba(13, 42, 92, 0.94), rgba(29, 78, 216, 0.9) 52%, rgba(15, 118, 110, 0.82));
+      color: #fff;
+      box-shadow: 0 28px 70px rgba(23, 62, 166, 0.28);
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      inset: auto -90px -90px auto;
+      width: 260px;
+      height: 260px;
+      background: radial-gradient(circle, rgba(255,255,255,0.28), transparent 68%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.14);
+      color: rgba(255,255,255,0.92);
+      font-size: 0.92rem;
+      letter-spacing: 0.04em;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 0.95fr;
+      gap: 28px;
+      align-items: end;
+      margin-top: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.45rem);
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+    }
+
+    .subtitle {
+      margin: 18px 0 0;
+      max-width: 62ch;
+      color: rgba(255,255,255,0.86);
+      font-size: 1.06rem;
+    }
+
+    .hero-meta {
+      display: grid;
+      gap: 14px;
+    }
+
+    .meta-card {
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 22px;
+      padding: 18px 20px;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(14px);
+    }
+
+    .meta-label {
+      display: block;
+      color: rgba(255,255,255,0.72);
+      font-size: 0.92rem;
+      margin-bottom: 6px;
+    }
+
+    .meta-value {
+      font-size: 1.08rem;
+      font-weight: 700;
+    }
+
+    .quick-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .quick-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.12);
+      color: #fff;
+      font-weight: 600;
+      backdrop-filter: blur(10px);
+    }
+
+    .quick-links a.secondary {
+      background: rgba(7, 17, 38, 0.22);
+    }
+
+    main {
+      padding-bottom: 56px;
+    }
+
+    .section {
+      margin-top: 24px;
+    }
+
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      background: var(--surface);
+      backdrop-filter: blur(18px);
+      box-shadow: var(--shadow);
+      padding: 32px;
+    }
+
+    .section-title {
+      margin: 0 0 10px;
+      font-size: clamp(1.45rem, 2vw, 2rem);
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+    }
+
+    .section-desc {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .stat {
+      border: 1px solid rgba(29, 78, 216, 0.12);
+      border-radius: 22px;
+      padding: 22px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(239,244,255,0.78));
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.8rem;
+      line-height: 1.1;
+      margin-bottom: 8px;
+      color: var(--primary-deep);
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .insight {
+      height: 100%;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: rgba(255,255,255,0.84);
+      padding: 24px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .tag.high { background: rgba(15, 118, 110, 0.12); color: var(--teal); }
+    .tag.medium { background: rgba(180, 83, 9, 0.12); color: var(--amber); }
+    .tag.low { background: rgba(185, 28, 28, 0.1); color: var(--danger); }
+
+    .insight h3 {
+      margin: 0 0 10px;
+      font-size: 1.16rem;
+    }
+
+    .insight p { margin: 0; color: var(--muted); }
+
+    .data-shell {
+      margin-top: 26px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      overflow: hidden;
+      background: var(--surface-solid);
+    }
+
+    .data-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+      padding: 18px 22px;
+      background: linear-gradient(180deg, rgba(232,240,255,0.95), rgba(244,248,255,0.92));
+      border-bottom: 1px solid var(--line);
+    }
+
+    .data-head strong {
+      display: block;
+      font-size: 1.04rem;
+      color: var(--primary-deep);
+    }
+
+    .data-head span { color: var(--muted); font-size: 0.94rem; }
+
+    .table-wrap { overflow-x: auto; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 860px;
+      background: #fff;
+    }
+
+    th, td {
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+      text-align: left;
+      vertical-align: top;
+      font-size: 1rem;
+    }
+
+    th {
+      font-size: 0.88rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #41506a;
+      background: #f7f9fd;
+    }
+
+    tr:last-child td { border-bottom: none; }
+
+    .callout {
+      margin-top: 22px;
+      border-left: 4px solid var(--primary);
+      border-radius: 0 18px 18px 0;
+      background: rgba(29, 78, 216, 0.06);
+      padding: 18px 20px;
+      color: var(--text);
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: rgba(255,255,255,0.88);
+      padding: 24px;
+      height: 100%;
+    }
+
+    .card h3 {
+      margin: 0 0 12px;
+      font-size: 1.12rem;
+    }
+
+    .card p,
+    .card li { color: var(--muted); }
+
+    .card ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .source-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .source-item {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255,255,255,0.88);
+      padding: 18px 20px;
+    }
+
+    .source-item strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 1rem;
+    }
+
+    footer {
+      margin: 28px 0 48px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.98rem;
+    }
+
+    @media (max-width: 920px) {
+      .hero-grid,
+      .stats,
+      .grid-3,
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card,
+      .panel { padding: 26px; }
+    }
+
+    @media (max-width: 640px) {
+      .shell { width: min(calc(100% - 20px), var(--max)); }
+      .hero { padding-top: 22px; }
+      .hero-card,
+      .panel { padding: 22px; border-radius: 24px; }
+      .quick-links a { width: 100%; }
+      .data-head { flex-direction: column; align-items: flex-start; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { transition: none !important; animation: none !important; }
+    }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <div class="card">
-      <div class="meta">English-language sources only</div>
-      <h1>Amway Atmosphere Sky Air Purifier</h1><p class="lead">Third-Party Scientific Test Report Summary</p><p>Prepared: 2026-05-25 Scope: English-language sources only</p><h2>Executive Summary</h2><p>This review searched for English-language third-party sources covering the Amway Atmosphere Sky air purifier, with emphasis on independently verified performance data such as CADR, particle-removal efficiency, and noise testing.</p><p>Main finding: publicly accessible third-party data is strongest for CADR, via the AHAM Verifide directory. Evidence for filtration efficiency is widely quoted in English-language materials, but a publicly accessible original third-party laboratory report could not be verified during this search. No independent English-language public noise test report with clear methodology and measured dB results was confirmed.</p><h2>Research Method</h2><p>The search prioritized the following source types:</p><p class="numbered">1. Independent certification databases</p><p class="numbered">2. Third-party laboratory or certification bodies</p><p class="numbered">3. Publicly accessible English-language test summaries or certification pages</p><p class="numbered">4. Public manufacturer claims only when needed for context, not as primary evidence</p><p>Non-English pages, dealer pages, and duplicated marketing claims were excluded from the evidence summary unless necessary to explain the absence of third-party data.</p><h2>Findings by Category</h2><h3>1) CADR: strongest publicly verified third-party evidence</h3><p>Source: AHAM Verifide Directory 2.0 <a href="https://www.ahamdir.com/room-air-cleaners/">https://www.ahamdir.com/room-air-cleaners/</a></p><p>AHAM Verifide is the most credible publicly accessible third-party source found for Atmosphere Sky CADR values. The directory lists multiple Atmosphere Sky regional model variants.</p><p>Observed AHAM-listed entries include:</p><div class="table-wrap"><table><thead><tr><th>Model</th><th>Room Size</th><th>Smoke CADR</th><th>Dust CADR</th><th>PM2.5 CADR</th><th>Pollen CADR</th><th>Voltage/Frequency</th></tr></thead><tbody><tr><td>Atmosphere Sky - 120539**</td><td>489 ft²</td><td>316</td><td>304</td><td>310</td><td>319</td><td>120V / 60Hz or 100V / 60Hz</td></tr><tr><td>Atmosphere Sky - 120539IN</td><td>465 ft²</td><td>300</td><td>300</td><td>300</td><td>300</td><td>240V / 50Hz</td></tr><tr><td>Atmosphere Sky - 120539T</td><td>465 ft²</td><td>300</td><td>300</td><td>300</td><td>300</td><td>100V / 60Hz</td></tr><tr><td>Atmosphere Sky - 120539TH</td><td>465 ft²</td><td>300</td><td>300</td><td>300</td><td>300</td><td>240V / 50Hz</td></tr><tr><td>Atmosphere Sky - 120539CH</td><td>465 ft²</td><td>300</td><td>300</td><td>300</td><td>300</td><td>220V / 50Hz or 240V / 50Hz</td></tr><tr><td>Atmosphere Sky - 120539J</td><td>465 ft²</td><td>300</td><td>300</td><td>300</td><td>300</td><td>100V / 60Hz</td></tr><tr><td>Atmosphere Sky - 120539M</td><td>465 ft²</td><td>300</td><td>300</td><td>300</td><td>300</td><td>240V / 50Hz</td></tr><tr><td>Atmosphere Sky - 120539E</td><td>465 ft²</td><td>300</td><td>300</td><td>300</td><td>300</td><td>240V / 50Hz</td></tr><tr><td>Atmosphere Sky - 120539K</td><td>465 ft²</td><td>300</td><td>300</td><td>300</td><td>300</td><td>240V / 50Hz</td></tr><tr><td>Atmosphere Sky - 120539HK</td><td>465 ft²</td><td>300</td><td>300</td><td>300</td><td>300</td><td>220V / 50Hz</td></tr></tbody></table></div><p>Interpretation:</p><ul><li>Atmosphere Sky does have third-party AHAM-listed CADR data.</li><li>Exact values vary by regional model/version.</li><li>The broad pattern is that most listed regional variants are rated at CADR 300 across smoke, dust, PM2.5, and pollen, while one broader 120539** listing shows higher values: Smoke 316, Dust 304, PM2.5 310, Pollen 319.</li></ul><p>Practical citation:</p><p>A careful evidence-based statement would be: &quot;Amway Atmosphere Sky has AHAM Verifide-listed CADR performance, with published values varying by model/region from CADR 300 across major categories up to Smoke 316 / Dust 304 / PM2.5 310 / Pollen 319 for the 120539** listing.&quot;</p><h3>2) Ozone-related third-party certification framework</h3><p>Source: Intertek Zero Ozone Certification Program <a href="https://www.intertek.com/sustainability/zero-ozone/">https://www.intertek.com/sustainability/zero-ozone/</a></p><p>Intertek documents an independent certification program for air-cleaning devices with an ozone emission threshold of no more than 0.005 ppm (5 ppb).</p><p>Relevant published points from Intertek:</p><ul><li>Independent third-party certification for ultra-low ozone emissions</li><li>Certification threshold: 0.005 ppm (5 ppb)</li><li>Positioned as stricter than FDA and CARB limits of 0.05 ppm (50 ppb)</li><li>Annual renewal required</li><li>Reverification testing required every 3 years</li></ul><p>Important limitation:</p><p>This source confirms the third-party certification framework and threshold, but this search did not verify a publicly accessible Atmosphere Sky product-specific certificate page directly from Intertek. Therefore, this source should be used to describe the standard itself, not as final proof that a specific Atmosphere Sky unit currently holds the certification unless a product-specific listing is separately confirmed.</p><h3>3) Filtration efficiency: widely quoted, but public third-party original report not confirmed</h3><p>Common English-language claim encountered in marketplace materials:</p><p>&quot;Removes 99.99% of particles as small as 0.007 microns.&quot;</p><p>Assessment:</p><ul><li>This claim is widely repeated in English-language product and distributor materials.</li><li>However, during this search, no publicly accessible original third-party laboratory report, public certification database entry, or downloadable English test report was confirmed that documents the full test method, aerosol type, face velocity, sampling method, or pass/fail protocol behind this exact figure.</li></ul><p>Evidence conclusion:</p><p>This filtration-efficiency figure may be repeated in English, but it should not be presented as a fully verified public third-party scientific result unless the original lab report is obtained.</p><p>Recommended citation language:</p><p>&quot;English-language materials widely cite a filtration claim of 99.99% removal of particles as small as 0.007 microns, but a publicly accessible original third-party laboratory report was not confirmed in this review.&quot;</p><h3>4) Noise testing: no confirmed public independent English report found</h3><p>Target sought:</p><p>A credible independent English-language noise test should ideally include:</p><ul><li>measured sound pressure levels in dB(A)</li><li>test distance</li><li>fan-speed setting(s)</li><li>room/background noise conditions</li><li>instrument or methodology description</li></ul><p>Result:</p><p>No public independent English-language noise test report meeting those standards was confirmed during this review.</p><p>Evidence conclusion:</p><p>Any noise figures found only in product specifications or dealer pages should be treated as manufacturer specifications rather than independent third-party scientific tests.</p><p>Recommended citation language:</p><p>&quot;No publicly located independent English-language noise test report for the Amway Atmosphere Sky was confirmed in this review.&quot;</p><h2>Reliability Assessment</h2><div class="table-wrap"><table><thead><tr><th>Category</th><th>Best public source found</th><th>Third-party strength</th><th>Publicly usable?</th><th>Notes</th></tr></thead><tbody><tr><td>CADR</td><td>AHAM Verifide Directory</td><td>High</td><td>Yes</td><td>Strongest verifiable evidence</td></tr><tr><td>Ozone / emissions standard</td><td>Intertek Zero Ozone program page</td><td>Medium</td><td>Yes, with caution</td><td>Confirms the certification framework, not necessarily a product-specific current certificate</td></tr><tr><td>Filtration efficiency</td><td>Repeated English-language claim</td><td>Low to Medium</td><td>With caution</td><td>Public original third-party lab report not confirmed</td></tr><tr><td>Noise</td><td>No confirmed public independent report found</td><td>Low</td><td>No</td><td>Treat any spec-sheet values as manufacturer data only</td></tr></tbody></table></div><h2>Bottom-Line Conclusion</h2><p>Based on publicly accessible English-language evidence, the Amway Atmosphere Sky has credible third-party CADR validation through AHAM Verifide, and this is the strongest performance data available for citation.</p><p>For filtration efficiency, a commonly repeated English-language claim exists, but the original public third-party test report was not confirmed in this review. For noise performance, no public independent English-language test report with verifiable methodology was confirmed.</p><p>Accordingly, the most defensible evidence-based summary is:</p><p class="numbered">1. CADR: supported by AHAM Verifide third-party data</p><p class="numbered">2. Filtration efficiency: often quoted, but public third-party original report not confirmed</p><p class="numbered">3. Noise: no confirmed independent English public test report found</p><h2>Source List</h2><p class="numbered">1. AHAM Verifide Directory 2.0</p><p>https://www.ahamdir.com/room-air-cleaners/</p><p class="numbered">2. Intertek Zero Ozone Certification Program</p><p>https://www.intertek.com/sustainability/zero-ozone/</p><h2>Suggested Short Citation Version</h2><p>The strongest public third-party data for the Amway Atmosphere Sky is its AHAM Verifide CADR listing. Depending on the model/region, published values range from CADR 300 across major categories to a 120539** listing with Smoke 316, Dust 304, PM2.5 310, and Pollen 319. A 99.99% at 0.007 micron filtration claim is widely repeated in English-language materials, but a publicly accessible original third-party laboratory report was not confirmed in this review. No public independent English-language noise test report with clear methodology was confirmed.</p>
+  <header class="hero">
+    <div class="shell">
+      <div class="hero-card">
+        <div class="eyebrow">英文來源限定・第三方資料優先</div>
+        <div class="hero-grid">
+          <div>
+            <h1>Amway Atmosphere Sky 空氣清淨機<br>第三方科學測試重點報告</h1>
+            <p class="subtitle">本頁將公開可查的英文資料整理成中文重點，優先採用第三方驗證、認證資料庫與公開測試框架，協助快速判讀這台機器在 CADR、過濾效率與噪音證據上的可信度。</p>
+            <div class="quick-links">
+              <a href="#summary">先看結論</a>
+              <a class="secondary" href="#cadr">看 CADR 數據</a>
+              <a class="secondary" href="#sources">看英文來源</a>
+            </div>
+          </div>
+          <div class="hero-meta">
+            <div class="meta-card">
+              <span class="meta-label">整理日期</span>
+              <div class="meta-value">2026-05-25</div>
+            </div>
+            <div class="meta-card">
+              <span class="meta-label">資料範圍</span>
+              <div class="meta-value">只納入英文公開來源</div>
+            </div>
+            <div class="meta-card">
+              <span class="meta-label">核心判斷</span>
+              <div class="meta-value">CADR 證據最完整，噪音第三方公開資料不足</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
+  </header>
+
+  <main class="shell">
+    <section class="section" id="summary">
+      <div class="panel">
+        <h2 class="section-title">一頁看懂重點結論</h2>
+        <p class="section-desc">如果你只想快速掌握可引用的重點，先看下面三個判讀即可。</p>
+        <div class="stats">
+          <div class="stat">
+            <strong>AHAM CADR 已可查</strong>
+            Atmosphere Sky 在 AHAM Verifide 名錄中有多個區域型號，屬於目前最可靠、最適合對外引用的第三方數據來源。
+          </div>
+          <div class="stat">
+            <strong>過濾效率常被引用</strong>
+            英文資料常見「可去除 99.99% 且小至 0.007 微米」的說法，但這次未確認到可公開下載的原始第三方實驗室報告。
+          </div>
+          <div class="stat">
+            <strong>噪音實測不足</strong>
+            目前未找到具測試距離、檔位、背景噪音與分貝方法的英文第三方公開噪音報告，因此不建議把規格值當成獨立實測結果。
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="panel">
+        <h2 class="section-title">證據強度評估</h2>
+        <p class="section-desc">這裡不是只看有沒有數字，而是看該數字是否來自公開可核對的第三方來源。</p>
+        <div class="grid-3">
+          <article class="insight">
+            <div class="tag high">高可信度</div>
+            <h3>CADR</h3>
+            <p>由 AHAM Verifide 公開名錄提供，型號與 CADR 數值可直接查詢，是本次最完整的第三方證據。</p>
+          </article>
+          <article class="insight">
+            <div class="tag medium">中度保留</div>
+            <h3>臭氧排放框架</h3>
+            <p>Intertek 的 Zero Ozone 計畫可確認測試門檻與認證架構，但這次未直接核到 Atmosphere Sky 專屬公開證書頁。</p>
+          </article>
+          <article class="insight">
+            <div class="tag low">低可信度</div>
+            <h3>噪音與過濾效率細節</h3>
+            <p>英文市場資料常有宣稱，但缺少完整原始報告、測試方法或公開資料庫條目，不適合直接當成已驗證結論。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="cadr">
+      <div class="panel">
+        <h2 class="section-title">CADR：目前最強的第三方可引用證據</h2>
+        <p class="section-desc">AHAM Verifide 是這次搜尋中最具公信力、且可公開核對的資料來源。名錄中列出多個 Atmosphere Sky 區域型號版本，因此引用時要注意型號差異。</p>
+
+        <div class="data-shell">
+          <div class="data-head">
+            <div>
+              <strong>AHAM Verifide Directory 2.0</strong>
+              <span>公開查詢頁面：Room Air Cleaners Directory</span>
+            </div>
+            <a href="https://www.ahamdir.com/room-air-cleaners/" target="_blank" rel="noreferrer">開啟英文來源</a>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>型號</th>
+                  <th>適用坪效換算前房間面積</th>
+                  <th>Smoke CADR</th>
+                  <th>Dust CADR</th>
+                  <th>PM2.5 CADR</th>
+                  <th>Pollen CADR</th>
+                  <th>電壓 / 頻率</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Atmosphere Sky - 120539**</td>
+                  <td>489 ft²</td>
+                  <td>316</td>
+                  <td>304</td>
+                  <td>310</td>
+                  <td>319</td>
+                  <td>120V / 60Hz 或 100V / 60Hz</td>
+                </tr>
+                <tr>
+                  <td>Atmosphere Sky - 120539IN</td>
+                  <td>465 ft²</td>
+                  <td>300</td>
+                  <td>300</td>
+                  <td>300</td>
+                  <td>300</td>
+                  <td>240V / 50Hz</td>
+                </tr>
+                <tr>
+                  <td>Atmosphere Sky - 120539T</td>
+                  <td>465 ft²</td>
+                  <td>300</td>
+                  <td>300</td>
+                  <td>300</td>
+                  <td>300</td>
+                  <td>100V / 60Hz</td>
+                </tr>
+                <tr>
+                  <td>Atmosphere Sky - 120539TH</td>
+                  <td>465 ft²</td>
+                  <td>300</td>
+                  <td>300</td>
+                  <td>300</td>
+                  <td>300</td>
+                  <td>240V / 50Hz</td>
+                </tr>
+                <tr>
+                  <td>Atmosphere Sky - 120539CH</td>
+                  <td>465 ft²</td>
+                  <td>300</td>
+                  <td>300</td>
+                  <td>300</td>
+                  <td>300</td>
+                  <td>220V / 50Hz 或 240V / 50Hz</td>
+                </tr>
+                <tr>
+                  <td>Atmosphere Sky - 120539J</td>
+                  <td>465 ft²</td>
+                  <td>300</td>
+                  <td>300</td>
+                  <td>300</td>
+                  <td>300</td>
+                  <td>100V / 60Hz</td>
+                </tr>
+                <tr>
+                  <td>Atmosphere Sky - 120539M</td>
+                  <td>465 ft²</td>
+                  <td>300</td>
+                  <td>300</td>
+                  <td>300</td>
+                  <td>300</td>
+                  <td>240V / 50Hz</td>
+                </tr>
+                <tr>
+                  <td>Atmosphere Sky - 120539E</td>
+                  <td>465 ft²</td>
+                  <td>300</td>
+                  <td>300</td>
+                  <td>300</td>
+                  <td>300</td>
+                  <td>240V / 50Hz</td>
+                </tr>
+                <tr>
+                  <td>Atmosphere Sky - 120539K</td>
+                  <td>465 ft²</td>
+                  <td>300</td>
+                  <td>300</td>
+                  <td>300</td>
+                  <td>300</td>
+                  <td>240V / 50Hz</td>
+                </tr>
+                <tr>
+                  <td>Atmosphere Sky - 120539HK</td>
+                  <td>465 ft²</td>
+                  <td>300</td>
+                  <td>300</td>
+                  <td>300</td>
+                  <td>300</td>
+                  <td>220V / 50Hz</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="callout">
+          最保守也最穩妥的寫法是：Atmosphere Sky 具有 AHAM Verifide 列名的 CADR 數據，但實際數值會依地區型號而不同；多數區域版本為各項 CADR 300，另有 120539** 條目顯示 Smoke 316、Dust 304、PM2.5 310、Pollen 319。
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="panel">
+        <h2 class="section-title">過濾效率與臭氧框架：可以提，但要講清楚限制</h2>
+        <p class="section-desc">這兩類資料不是不能用，而是要區分「可確認的測試框架」與「尚未看到原始產品報告的宣稱」。</p>
+        <div class="two-col">
+          <article class="card">
+            <div class="tag medium">需保留說法</div>
+            <h3>過濾效率</h3>
+            <p>英文市場資料中，常見一句話是「可去除 99.99% 且粒徑小至 0.007 microns」。但這次搜尋沒有找到公開可下載、可核對測試條件的原始第三方英文實驗室報告。</p>
+            <ul>
+              <li>常被引用，不代表已完成公開驗證。</li>
+              <li>缺少測試方法細節，例如氣膠類型、流速、取樣方式與完整判讀條件。</li>
+              <li>如果要寫入正式簡報，建議標示為「英文資料常見說法，原始第三方報告未確認」。</li>
+            </ul>
+          </article>
+          <article class="card">
+            <div class="tag medium">框架可確認</div>
+            <h3>Intertek Zero Ozone</h3>
+            <p>Intertek 的英文頁面可確認這是一個獨立第三方認證框架，且臭氧排放門檻為不高於 0.005 ppm（5 ppb），並要求年度更新與定期再驗。</p>
+            <ul>
+              <li>能證明有一套嚴格的臭氧驗證標準存在。</li>
+              <li>本次尚未直接核到 Atmosphere Sky 專屬公開證書頁。</li>
+              <li>因此適合描述「認證框架」，不宜直接當成該產品目前已持證的最終證據。</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="panel">
+        <h2 class="section-title">噪音測試：目前沒有找到可直接引用的英文第三方公開實測</h2>
+        <p class="section-desc">真正有參考價值的噪音報告，通常要有測試距離、風速檔位、背景噪音與量測方法。這些條件若缺少，就很難判斷數字的比較價值。</p>
+        <div class="two-col">
+          <article class="card">
+            <h3>理想的第三方噪音報告應包含</h3>
+            <ul>
+              <li>dB(A) 或等效明確的聲壓單位</li>
+              <li>測試距離與空間條件</li>
+              <li>各風速檔位對應數據</li>
+              <li>背景噪音控制條件</li>
+              <li>儀器或測試方法說明</li>
+            </ul>
+          </article>
+          <article class="card">
+            <div class="tag low">目前不足</div>
+            <h3>本次搜尋結果</h3>
+            <p>目前未確認到符合上述條件、且公開可查的英文第三方 Atmosphere Sky 噪音實測。因此若只看到規格表上的分貝數字，應視為品牌規格，不是獨立驗證報告。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="panel">
+        <h2 class="section-title">可直接引用的中文摘要寫法</h2>
+        <p class="section-desc">下面這段適合直接放進簡報、報價附件或對客戶的整理頁。</p>
+        <div class="callout">
+          依公開可查的英文資料來看，Amway Atmosphere Sky 最具可信度的第三方測試數據是 AHAM Verifide 的 CADR 列名；不同地區型號的數值略有差異，多數版本在 Smoke、Dust、PM2.5 與 Pollen 類別均為 CADR 300，另有 120539** 條目顯示更高數值。至於「99.99% 過濾、可小至 0.007 微米」的說法，雖然在英文資料中相當常見，但本次未確認到公開可下載的原始第三方實驗室報告。噪音方面，則尚未找到具完整方法說明的英文第三方公開實測，因此不建議把規格表分貝數直接視為第三方科學證據。
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sources">
+      <div class="panel">
+        <h2 class="section-title">英文來源</h2>
+        <p class="section-desc">以下為本頁整理時實際採用的英文公開來源。</p>
+        <div class="source-list">
+          <div class="source-item">
+            <strong>1. AHAM Verifide Directory 2.0</strong>
+            <a href="https://www.ahamdir.com/room-air-cleaners/" target="_blank" rel="noreferrer">https://www.ahamdir.com/room-air-cleaners/</a>
+          </div>
+          <div class="source-item">
+            <strong>2. Intertek Zero Ozone Certification Program</strong>
+            <a href="https://www.intertek.com/sustainability/zero-ozone/" target="_blank" rel="noreferrer">https://www.intertek.com/sustainability/zero-ozone/</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    本頁為中文整理版；原始採證範圍僅限英文公開來源，並以第三方可核對資料為優先。
+  </footer>
 </body>
 </html>
