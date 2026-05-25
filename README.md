@@ -6,6 +6,7 @@ Contents:
 
 - `amway-atmosphere-sky-third-party-report.md` — full report in Markdown
 - `amway-atmosphere-sky-third-party-report.html` — browser-friendly HTML version
+- `index.html` — GitHub Pages entry point that redirects to the full HTML report
 
 Notes:
 
